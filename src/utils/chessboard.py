@@ -64,11 +64,3 @@ class Chessboard:
             path.append(moves[0])
 
         return path
-
-
-if __name__ == '__main__':
-    chessboard = Chessboard(size=5)
-
-    for x in range(5):
-        for y in range(5):
-            print(chessboard.solve(x, y))

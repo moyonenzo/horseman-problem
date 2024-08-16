@@ -1,0 +1,11 @@
+services:
+  api:
+    image: 'api:latest'
+    container_name: 'api'
+    build:
+      context: '.'
+      dockerfile: './Dockerfile'
+    volumes:
+      - './src/:/app/src'
+    ports:
+      - '3000:5000'
