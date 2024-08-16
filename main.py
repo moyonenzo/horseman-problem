@@ -57,7 +57,7 @@ class Chessboard:
             moves = list(filter(lambda move: move not in path_tried[position], moves))
 
             if len(moves) == 0:
-                path.pop()
+                del path_tried[path.pop()]
                 continue
 
             path_tried[position].append(moves[0])
@@ -67,9 +67,8 @@ class Chessboard:
 
 
 if __name__ == '__main__':
-    chessboard = Chessboard(size=8)
-    print(chessboard.solve(1, 1))
+    chessboard = Chessboard(size=5)
 
-    # for x in range(8):
-    #     for y in range(8):
-    #         print(chessboard.solve(x, y))
+    for x in range(5):
+        for y in range(5):
+            print(chessboard.solve(x, y))
